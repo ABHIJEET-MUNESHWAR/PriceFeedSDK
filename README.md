@@ -1,5 +1,14 @@
 # PriceFeedSDK
 
+[![CI](https://github.com/ABHIJEET-MUNESHWAR/PriceFeedSDK/actions/workflows/ci.yml/badge.svg)](https://github.com/ABHIJEET-MUNESHWAR/PriceFeedSDK/actions/workflows/ci.yml)
+[![Stars](https://img.shields.io/github/stars/ABHIJEET-MUNESHWAR/PriceFeedSDK?style=flat)](https://github.com/ABHIJEET-MUNESHWAR/PriceFeedSDK/stargazers)
+[![Issues](https://img.shields.io/github/issues/ABHIJEET-MUNESHWAR/PriceFeedSDK)](https://github.com/ABHIJEET-MUNESHWAR/PriceFeedSDK/issues)
+[![Last commit](https://img.shields.io/github/last-commit/ABHIJEET-MUNESHWAR/PriceFeedSDK)](https://github.com/ABHIJEET-MUNESHWAR/PriceFeedSDK/commits)
+[![Rust](https://img.shields.io/badge/rust-1.89%2B-orange.svg)](https://www.rust-lang.org)
+[![TypeScript](https://img.shields.io/badge/typescript-5.x-3178c6.svg)](https://www.typescriptlang.org)
+[![Python](https://img.shields.io/badge/python-3.10%2B-3776ab.svg)](https://www.python.org)
+[![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
+
 A **multi-language consumer SDK** for pull-oracle price feeds. One small, rigorously
 typed domain model — mirrored byte-for-byte across **Rust, TypeScript, and Python** —
 wrapped in an ergonomic, transport-agnostic client with built-in caching, timeouts,

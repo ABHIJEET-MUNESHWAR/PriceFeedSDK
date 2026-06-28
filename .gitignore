@@ -1,0 +1,32 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock.orig
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Node / TypeScript
+node_modules
+typescript/dist
+typescript/coverage
+*.tsbuildinfo
+examples-dapp/node_modules
+examples-dapp/dist
+
+# Python
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+python/dist
+python/build
+python/*.egg-info
+.venv
+
+# Editor
+.idea
+.vscode
+.DS_Store

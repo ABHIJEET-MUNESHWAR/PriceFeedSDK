@@ -1,0 +1,27 @@
+[package]
+name = "pricefeed-watch"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+description = "Example dApp: a CLI price watcher built on the PriceFeed SDK."
+
+[[bin]]
+name = "pricefeed-watch"
+path = "src/main.rs"
+
+[dependencies]
+pricefeed-types = { workspace = true }
+pricefeed-client = { workspace = true }
+pricefeed-http = { workspace = true }
+async-trait = { workspace = true }
+tokio = { workspace = true }
+clap = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+
+[lints.rust]
+unsafe_code = "forbid"

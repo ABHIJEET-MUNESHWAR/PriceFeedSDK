@@ -1,0 +1,15 @@
+services:
+  # Example watcher running against the deterministic in-memory transport.
+  # Override `command` (and set PRICEFEED_ENDPOINT) to point at a live
+  # OracleForge / OracleBridge GraphQL endpoint instead.
+  watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pricefeed-sdk:latest
+    container_name: pricefeed-watch
+    environment:
+      PRICEFEED_ENDPOINT: http://host.docker.internal:8080/graphql
+      RUST_LOG: info
+    command: ["--demo", "--rounds", "5"]
+    restart: "no"

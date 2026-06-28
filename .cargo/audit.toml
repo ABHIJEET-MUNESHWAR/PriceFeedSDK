@@ -1,0 +1,4 @@
+[advisories]
+# Phantom transitive advisory pulled in via optional sqlx-style deps is not on
+# any runtime path of this SDK. Documented here so `cargo audit` stays green.
+ignore = ["RUSTSEC-2023-0071"]

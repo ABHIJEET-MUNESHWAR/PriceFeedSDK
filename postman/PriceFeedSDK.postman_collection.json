@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "PriceFeedSDK",
+    "description": "The GraphQL queries the PriceFeed SDK issues against a compatible price endpoint (OracleForge / OracleBridge). Set {{baseUrl}} to your service, e.g. http://localhost:8080.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "feedId",
+      "value": "BTC/USD",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "price (single feed)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{baseUrl}}/graphql", "host": ["{{baseUrl}}"], "path": ["graphql"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"query($feed: String!) { price(feedId: $feed) { feedId mantissa conf expo status publishTime } }\",\n  \"variables\": { \"feed\": \"{{feedId}}\" }\n}"
+        },
+        "description": "The exact query HttpTransport (Rust/TS/Python) issues. Maps directly into a PriceUpdate."
+      }
+    },
+    {
+      "name": "prices (batch)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{baseUrl}}/graphql", "host": ["{{baseUrl}}"], "path": ["graphql"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"query($feeds: [String!]!) { prices(feedIds: $feeds) { feedId mantissa conf expo status publishTime } }\",\n  \"variables\": { \"feeds\": [\"BTC/USD\", \"ETH/USD\", \"SOL/USD\"] }\n}"
+        },
+        "description": "Batch variant used by fetch_many / getMany when the endpoint supports it."
+      }
+    },
+    {
+      "name": "health (liveness)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/health/live", "host": ["{{baseUrl}}"], "path": ["health", "live"] }
+      }
+    }
+  ]
+}
